@@ -41,4 +41,44 @@ class ApiSignature
         return strtoupper(md5($stringSignTemp));
     }
 
+    /**
+     * 加密
+     * @param string $data 待加密的数据
+     * @return string 加密后的数据（Base64 编码）
+     */
+    public function encrypt($data)
+    {
+        // 使用 openssl_encrypt 进行 AES-CBC 加密
+        $encrypted = openssl_encrypt(
+            $data,
+            'AES-128-CBC',
+            $this->key,
+            OPENSSL_RAW_DATA,
+            $this->iv
+        );
+
+        // 返回 Base64 编码的加密数据
+        return base64_encode($encrypted);
+    }
+
+    /**
+     * 解密
+     * @param string $data Base64 编码的加密数据
+     * @return string 解密后的明文
+     */
+    public function decrypt($data)
+    {
+        // Base64 解码
+        $encrypted = base64_decode($data);
+
+        // 使用 openssl_decrypt 进行 AES-CBC 解密
+        return openssl_decrypt(
+            $encrypted,
+            'AES-128-CBC',
+            $this->key,
+            OPENSSL_RAW_DATA,
+            $this->iv
+        );
+    }
+
 }
