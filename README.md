@@ -6,16 +6,16 @@
 
 PHP 实现数据加密包括md5等 
 
-### Installation
+### 安装
 ```
 // 非 composer 方式安装的，引入文件
-// include './src/PhoneLocation.php';
+// include './src/ApiSignature.php';
 ```
 
-### Usage
+### 使用
 ```php
 <?php
-use Shitoudev\Phone\PhoneLocation;
+use ApiSignature;
 
 // composer 方式安装
 // include './vendor/autoload.php';
