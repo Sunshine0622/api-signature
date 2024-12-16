@@ -6,12 +6,10 @@
 
 PHP 实现数据加密包括md5等 
 
-### 提示
-由于2019年11月携号转网已开始实行，手机号的运营商可能与实际不符，请谨慎将运营商信息用于重要的业务上。
-
 ### Installation
 ```
-composer require "shitoudev/phone-location:^0.1"
+// 非 composer 方式安装的，引入文件
+// include './src/PhoneLocation.php';
 ```
 
 ### Usage
@@ -47,9 +45,3 @@ Array
     [sp] => 联通
 )
 ```
-
-### Thanks
-[https://github.com/lovedboy/phone](https://github.com/lovedboy/phone)
-
-### License
-[MIT license.](https://raw.githubusercontent.com/shitoudev/phone-location/master/LICENSE)
