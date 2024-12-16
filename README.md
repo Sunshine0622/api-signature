@@ -1,10 +1,10 @@
-## 手机号码归属地查询
+## API 签名加密
 [![Latest Stable Version](https://img.shields.io/packagist/v/shitoudev/phone-location.svg)](https://packagist.org/packages/shitoudev/phone-location)
 [![Build Status](https://travis-ci.org/shitoudev/phone-location.svg?style=flat-square&branch=master)](https://travis-ci.org/shitoudev/phone-location)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.6-8892BF.svg)](https://php.net/)
 
 
-PHP 实现数据加密包括md5等 [https://github.com/lovedboy/phone](https://github.com/lovedboy/phone)
+PHP 实现数据加密包括md5等 
 
 ### 提示
 由于2019年11月携号转网已开始实行，手机号的运营商可能与实际不符，请谨慎将运营商信息用于重要的业务上。
