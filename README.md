@@ -17,11 +17,15 @@ PHP 实现数据加密包括md5等
 <?php
 use ApiSignature;
 
-// composer 方式安装
-// include './vendor/autoload.php';
-
-// 非 composer 方式安装的，引入文件
-// include './src/PhoneLocation.php';
+/*MD5 签名规则
+签名生成的通用步骤如下:
+第一步，设所有发送或者接收到的数据为集合 M(所有参数，包括公共参数》，将集合 M 内非空参数值的参数按照参数名 ASCI 码从小到大排序 (字典序) ，使用 URL 键值对的格式(即 key1=value1&key2=value2...)拼接成字符串 stringA。
+特别注意以下重要规则:o
+参数名 ASCII 码从小到大排序 (字典序) ;
+如果参数的值为空不参与签名;
+参数名区分大小写;验证调用返回或主动通知签名时，传送的 sign 参数不参与签名，将生成的签名与该 sign 值作校验。
+接口可能增加字段，验证签名时必须支持增加的扩展字段若 value 内碰到特殊字符，按照标准 UTF-8 字符集的 URL-Encoding 方式进行转义第二步，在stringA 最后拼接上 key (接入流程中供) 得到 stringSignTemp 字符串，并对 stringSignTemp 进行MD5 运算，再将得到的字符串所有字符转换为大写，得到 sign 值 signValue。特别注意以下重要规则:
+。拼接 key 的具体方式为: stringA&key=keyValue*/
 	
 $ApiSignature = new ApiSignature();
 $params = [
@@ -36,12 +40,5 @@ $signKey = 'your_sign_key';
 // 对输入参数进行加密
 $sign = $ApiSignature->generateMd5Sign($params, $signKey);
 // Output;
-Array
-(
-    [province] => 上海
-    [city] => 上海
-    [postcode] => 200000
-    [tel_prefix] => 021
-    [sp] => 联通
-)
+"8B3CCE65E24FE6338F10BA0FE7ACBA3F"
 ```

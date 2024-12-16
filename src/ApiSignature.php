@@ -10,21 +10,7 @@ namespace ApiSignature;
  */
 class ApiSignature
 {
-    // 定义基础 URL
-    protected $baseUrl;
-
-    // 默认超时时间（秒）
-    protected $timeout = 10;
-
-    // 默认重试次数
-    protected $retryTimes = 3;
-
-    // 默认重试间隔时间（毫秒）
-    protected $retryMilliseconds = 200;
-
-    // 日志处理
-    protected $logHandler;
-
+    //构造函数
     public function __construct()
     {
     }
